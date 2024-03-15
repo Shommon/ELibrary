@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --close-button-icon-size: 1vw;
+    --close-button-icon-color: lightgrey;
+    --close-button-size: 1.5rem;
+    --close-button-color:grey;
+
+    --header-background-color: lightblue;
+    --footer-background-color: lightcoral;
+    --body-background-color: lightcyan;
+
+    --dialog-box-padding: 0.5rem;
+    --dialog-box-background-color: white;
+    --book-background-color: white;
+    --book-row-height: 100%;
+    --book-row-max-height: 40vh;
+
+    /* --page-width: ; */
+}
+
+/* ======GRID LAYOUT======= */
+body {
+    max-width: 100vw;
+    width: 100%;
+    height: 140vh;
+    /* background-color: blue; */
+}
+
+#page-container {
+    outline: 10px blue dashed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    /* outline: 10px blue dashed; */
+    background: var(--header-background-color);
+    max-height: 15vh;
+    flex:1
+}
+
+section#body {
+    background-color: var(--body-background-color);
+    flex:1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    
+}
+
+footer {
+    background: var(--footer-background-color);
+    max-height: 10vh;
+    flex: 1;
+
+} 
+
+
+
+
+/* =======DIALOG STYLING========== */
+#addbookdialog {
+    width: 25vw;
+    height:55vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+
+    border-radius: 0.5rem;
+    padding: var(--dialog-box-padding);
+
+    display: none;
+    flex-direction: column;
+    border: none;
+    background-color: var(--dialog-box-background-color);
+}
+
+.dialog.header.container {
+    /* outline: 1px dashed black; */
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.dialog.header.container p{
+    /* outline: 3px red dashed; */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* ===========CLOSE BUTTON========= */
+#close {
+    width: var(--close-button-size);
+    height: var(--close-button-size);
+    display: grid;
+    place-items: center;
+    background: var(--close-button-color);
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+#close svg{
+    width: var(--close-button-icon-size);
+    height: var(--close-button-icon-size);
+    fill: var(--close-button-icon-color);
+}
+
+
+/* ========ADD BOOK FORM========= */
+form#addbookform {
+    /* outline: black 1px dashed; */
+    flex: 10;
+    margin-top: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+form#addbookform input{
+    width: 80%;
+    height: 15%;
+    /* outline: 1px red dashed; */
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
+    padding-left: 0.4em;
+
+}
+
+form#addbookform #submitbutton{
+    padding-left: 0;
+    border: transparent;
+    box-shadow: 0px 2px 0px darkgrey;
+}
+
+/* ========BOOKS CONTAINER========== */
+#addbookbtn {
+    width: 8rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    flex-grow: 0;
+}
+
+#book-container {
+    outline: 3px black dashed;
+    flex: 1;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    gap: 5%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.row{
+    outline: 3px blue dashed;
+    max-width: 100vw;
+    width: 100%;
+    max-height: var(--book-row-max-height);
+    height: var(--book-row-height);
+
+    display: flex;
+    gap: 2%;
+}
+
+
+
+/* =======BOOK ITEM========= */
+.book {
+    outline: 1px red dashed;
+    width: 15%;
+    height: 100%;
+    background-color: var(--book-background-color);
+    border-radius: 3%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
