@@ -1,13 +1,24 @@
 const dialog = document.getElementById("addbookdialog");
 const closeBtn = dialog.querySelector("#close");
-
+const bookElements = document.querySelectorAll(".book");
 
 const myLibrary = [];
+
+
+// Test for button press on each book object
+bookElements.forEach(book => {
+    const statusBtn = book.querySelector(".status");
+    statusBtn.addEventListener('click', (e) => {
+        console.log(e);
+    })
+})
+
+
+
 
 function showDialog() {
     dialog.style.display = 'flex';
     dialog.showModal();
-
 }
 
 closeBtn.addEventListener("click", (e) => {
@@ -35,7 +46,7 @@ function addBookToLibrary(book) {
 
 
 addBookToLibrary(theHobbit)
-console.log(myLibrary[0].title)
+// console.log(myLibrary[0].title)
 
 
 
